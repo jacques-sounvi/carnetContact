@@ -1,0 +1,36 @@
+{%extends "LoginLoginBundle:Default:index.html.twig" %}
+
+
+{%block container %}
+    <div class="container">
+        <form id="form" class="well" method="POST" action="{{path('login_login_newContact')}}">
+            <h2>ajouter contact</h2>
+            <label>Nom</label>
+            <input type="text" name="nom" class="input-xlarge"></br>
+            <label>Prenom</label>
+            <input type="text" name="prenom" class="input-xlarge"></br>
+            <label>Email</label>
+            <input type="email" name="email" class="input-xlarge"></br>
+            <label>Telephone</label>
+            <input type="text" name="telephone" class="input-xlarge">
+            <div>
+                <button class="btn btn-secondary" type="submit" value='ajouter'>ajouter</button>
+            </div>
+        </form>
+
+    </div> 
+{%endblock%}
+
+{%block stylesheets %}
+    <style type="text/css">
+        .btn-secondary{
+            width: 100px;
+            text-align: center;
+            background-color: royalblue;
+            color: whitesmoke;
+
+        }
+        
+    </style>
+
+{%endblock%}

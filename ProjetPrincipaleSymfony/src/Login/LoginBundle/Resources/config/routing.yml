@@ -1,0 +1,25 @@
+login_login_homepage:
+    path:     /login
+    defaults: { _controller: LoginLoginBundle:Default:index}
+
+
+login_login_signup:
+    path:     /signup
+    defaults: { _controller: LoginLoginBundle:Default:signup}
+
+
+login_login_newContact:
+    path:     /newContact
+    defaults: { _controller: LoginLoginBundle:Default:newContact}
+
+
+login_login_listContact:
+    path:     /listContact
+    defaults: { _controller: LoginLoginBundle:Default:listContact}
+
+
+login_login_supprimer:
+    path:     /{id}/supprimer
+    defaults: { _controller: LoginLoginBundle:Default:supprimer}
+    requirements:
+        id: \d+

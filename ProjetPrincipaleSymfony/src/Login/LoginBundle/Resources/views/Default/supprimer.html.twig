@@ -1,0 +1,108 @@
+{%extends "base.html.twig" %}
+
+
+{%block body %}
+    <div class='titre'>
+        <h1> carnet de contact </h1>
+    </div>
+    <div>
+        <form id="form" class="well" method="POST" action="{{path('login_login_supprimer')}}">
+
+            <table border="2" width="80%">
+                <tr>
+                    <th>NOM</th><th>PRENOM</th><th>EMAIL</th><th>TELEPHONE</th><th>ACTION</th>
+                </tr>  
+                {% for identifiant in identifiant %}
+                    <tr>
+                        <td>{{identifiant.nom}}</td>
+                        <td>{{identifiant.prenom}}</td>
+                        <td>{{identifiant.email}}</td>
+                        <td>{{identifiant.telephone}}</td>
+                        <td><a href="{{path('login_login_supprimer',{'id':identifiant.id})}}">supprimer</a></td>
+                    </tr>
+
+                {% endfor %}
+
+            </table>
+
+            {%block container %}
+                <div class="container">
+                    <div>
+                        <button  class="btn btn-secondary" type="submit"><a href="{{path('login_login_newContact')}}">ajouter</a></button>
+                        <a href="{{path('login_login_homepage')}}">deconnexion</a>
+                    </div>
+
+                </div> 
+            </form>
+
+        {%endblock%} 
+    </div>
+
+{%endblock%}
+{%block stylesheets %}
+    <style type="text/css">
+        body {
+            padding-top: 40px;
+            padding-bottom: 40px;
+            font-size: 15px;
+            background-color: ghostwhite;
+
+        }
+
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th {
+            height: 20px;
+            text-align: center;
+            background-color:#999999 ;
+
+
+        }
+        td{
+            text-align: center;
+            height: 10px;
+        }
+        table p{
+            color: activeborder;
+            font-weight : bold;
+            font-weight : 800;
+
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+        table tr th, table tr td{
+            font-size: 15px;
+            padding: 5px;
+        }
+
+        .btn-secondary{
+            width: 50px;
+            margin: auto;
+            text-align: center;
+            background-color: royalblue;
+
+        }
+
+        .btn-secondary a{
+            margin: auto;
+            text-decoration: none;
+            color: white;
+        }
+        
+         .titre {
+            text-align: center;
+            color: brown;
+            margin: -80px;
+            padding: 60px;
+            
+        }
+
+
+
+    </style>
+{%endblock%}

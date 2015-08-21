@@ -1,0 +1,25 @@
+{%extends "LoginLoginBundle:Default:login.html.twig" %}
+
+
+{%block container %}
+    <div class="container">
+        <form id="form" class="well" method="POST" action="{{path('login_login_signup')}}">
+            <h2>sign up</h2>
+            <label>Username</label>
+            <input type="text" name="username" class="input-xlarge"></br>
+            <label>Password</label>
+            <input type="password" name="password" class="input-xlarge"></br>
+            <label>Nom</label>
+            <input type="text" name="nom" class="input-xlarge"></br>
+            <label>Email</label>
+            <input type="text" name="email" class="input-xlarge"></br>
+            <label>Telephone</label>
+            <input type="text" name="telephone" class="input-xlarge">
+            <div>
+                <button  class="btn btn-secondary" type="submit" value='inscription'<a href="{{path('login_login_homepage')}}">Inscription</button>
+            </div>
+        </form>
+
+    </div> 
+
+{%endblock%}
